@@ -1,0 +1,33 @@
+{
+    "name": "ARMBOT",
+    "version": "1.0.0",
+    "description": "ARMBOT Library for controlling robotic arm movements.",
+    "keywords": [
+      "robotics",
+      "arm",
+      "servo",
+      "control"
+      "CODROB"
+      "ARMBOT"
+      "CARBOT"
+      "DRONEBOT"
+    ],
+    "authors": [
+      {
+        "name": "samed5497",
+        "email": "samed5497@outlook.com"
+      }
+    ],
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/samed5497/CODROB-ArmBot_lib.git"
+    },
+    "license": "MIT",
+    "frameworks": ["arduino"],
+    "platforms": ["espressif8266", "espressif32"],
+    "homepage": "https://github.com/samed5497/CODROB-ArmBot_lib",
+    "dependencies": {
+      "Servo": "*"
+    }
+  }
+  
