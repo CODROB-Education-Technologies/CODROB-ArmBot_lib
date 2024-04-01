@@ -1,46 +1,42 @@
+# ARMBOT Library User Guide
+This library is specially designed and produced by the CODROB developer team to control the ARMBOT product.
+![alt text](<../lib/ARMBOT_lib/images/1 (2).jpg>)
+## Using with Arduino IDE
 
-This directory is intended for project specific (private) libraries.
-PlatformIO will compile them to static libraries and link into executable file.
+### Installation
 
-The source code of each library should be placed in an own separate directory
-("lib/your_library_name/[here are source files]").
+1. Open the Arduino IDE.
+2. Go to "Sketch" -> "Include Library" -> "Manage Libraries..." from the menu bar.
+3. Type "ARMBOT" in the search box.
+4. Find the ARMBOT library and click the "Install" button to complete the installation.
 
-For example, see a structure of the following two libraries `Foo` and `Bar`:
 
-|--lib
-|  |
-|  |--Bar
-|  |  |--docs
-|  |  |--examples
-|  |  |--src
-|  |     |- Bar.c
-|  |     |- Bar.h
-|  |  |- library.json (optional, custom build options, etc) https://docs.platformio.org/page/librarymanager/config.html
-|  |
-|  |--Foo
-|  |  |- Foo.c
-|  |  |- Foo.h
-|  |
-|  |- README --> THIS FILE
-|
-|- platformio.ini
-|--src
-   |- main.c
 
-and a contents of `src/main.c`:
-```
-#include <Foo.h>
-#include <Bar.h>
 
-int main (void)
-{
-  ...
-}
+# ARMBOT Kütüphanesi Kullanım Kılavuzu
+Bu kütüphane CODROB  geliştirici ekibi tarafından ARMBOT ürününü kontrol etmek için özel olarak tasarlanmış ve üretilmiştir. 
+![alt text](<../lib/ARMBOT_lib/images/1 (2).jpg>)
 
-```
+## Arduino IDE ile Kullanım
 
-PlatformIO Library Dependency Finder will find automatically dependent
-libraries scanning project source files.
+### Kurulum
 
-More information about PlatformIO Library Dependency Finder
-- https://docs.platformio.org/page/librarymanager/ldf.html
+1. Arduino IDE'yi açın.
+2. Menu çubuğundan "Sketch" -> "Include Library" -> "Manage Libraries..." seçeneğine gidin.
+3. Arama kutusuna "ARMBOT" yazın.
+4. ARMBOT kütüphanesini bulun ve "Install" düğmesine tıklayarak kurulumu tamamlayın.
+
+
+
+
+# Katkıda Bulunma / Contributing
+Katkıda bulunmak isterseniz, lütfen GitHub deposuna Pull Request gönderin. / If you'd like to contribute, please send a Pull Request to the GitHub repository.
+
+# Lisans / License
+Bu kütüphane MIT lisansı altında lisanslanmıştır. Detaylar için LICENSE dosyasına bakınız. / This library is licensed under the MIT License. See the LICENSE file for details.
+
+![alt text](<../lib/ARMBOT_lib/images/1 (1).jpg>)
+![alt text](<../lib/ARMBOT_lib/images/1 (2).jpg>)
+![alt text](<../lib/ARMBOT_lib/images/1 (4).jpg>)
+![alt text](<../lib/ARMBOT_lib/images/1 (8).jpg>)
+![alt text](VEKTÖR.png)
