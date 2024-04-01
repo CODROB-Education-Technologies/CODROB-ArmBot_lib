@@ -1,6 +1,7 @@
 # ARMBOT Library User Guide
 This library is specially designed and produced by the CODROB developer team to control the ARMBOT product.
-![alt text](<../lib/ARMBOT_lib/images/1 (2).jpg>)
+![alt text](<images/1 (2).jpg>)
+
 ## Using with Arduino IDE
 
 ### Installation
@@ -15,7 +16,7 @@ This library is specially designed and produced by the CODROB developer team to 
 
 # ARMBOT Kütüphanesi Kullanım Kılavuzu
 Bu kütüphane CODROB  geliştirici ekibi tarafından ARMBOT ürününü kontrol etmek için özel olarak tasarlanmış ve üretilmiştir. 
-![alt text](<../lib/ARMBOT_lib/images/1 (2).jpg>)
+![alt text](<images/1 (2).jpg>)
 
 ## Arduino IDE ile Kullanım
 
@@ -37,8 +38,8 @@ Bu kütüphane 2024 Yılında Samed KAYA tarafından lisanslanmıştır. Detayla
 
  See the LICENSE file for details.
 
-![alt text](<../lib/ARMBOT_lib/images/1 (1).jpg>)
-![alt text](<../lib/ARMBOT_lib/images/1 (2).jpg>)
-![alt text](<../lib/ARMBOT_lib/images/1 (4).jpg>)
-![alt text](<../lib/ARMBOT_lib/images/1 (8).jpg>)
-![alt text](VEKTÖR.png)
+![alt text](<images/1 (1).jpg>)
+![alt text](<images/1 (2).jpg>)
+![alt text](<images/1 (4).jpg>)
+![alt text](<images/1 (8).jpg>)
+![alt text](<images/VEKTÖR.png>)
