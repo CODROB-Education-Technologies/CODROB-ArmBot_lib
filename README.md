@@ -33,7 +33,9 @@ Bu kütüphane CODROB  geliştirici ekibi tarafından ARMBOT ürününü kontrol
 Katkıda bulunmak isterseniz, lütfen GitHub deposuna Pull Request gönderin. / If you'd like to contribute, please send a Pull Request to the GitHub repository.
 
 # Lisans / License
-Bu kütüphane MIT lisansı altında lisanslanmıştır. Detaylar için LICENSE dosyasına bakınız. / This library is licensed under the MIT License. See the LICENSE file for details.
+Bu kütüphane 2024 Yılında Samed KAYA tarafından lisanslanmıştır. Detaylar için LICENSE dosyasına bakınız. / Copyright (c) 2024 Samed KAYA. All right reserved.
+
+ See the LICENSE file for details.
 
 ![alt text](<../lib/ARMBOT_lib/images/1 (1).jpg>)
 ![alt text](<../lib/ARMBOT_lib/images/1 (2).jpg>)
