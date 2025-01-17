@@ -1,6 +1,6 @@
 {
   "name": "ARMBOT",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "ARMBOT Library for controlling robotic arm movements.",
   "keywords": [
     "robotics",
