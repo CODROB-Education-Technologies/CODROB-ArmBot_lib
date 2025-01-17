@@ -1,6 +1,6 @@
 {
-  "name": "ARMBOT",
-  "version": "1.0.2",
+  "name": "CODROB_ArmBot",
+  "version": "1.0.0",
   "description": "ARMBOT Library for controlling robotic arm movements.",
   "keywords": [
     "robotics",
