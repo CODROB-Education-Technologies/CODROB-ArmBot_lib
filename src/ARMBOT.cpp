@@ -1,4 +1,4 @@
-#include "include/ARMBOT.h"
+#include "ARMBOT.h"
 
 // ARMBOT sınıfının kurucu fonksiyonu
 // Constructor function of ARMBOT class
