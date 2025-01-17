@@ -38,10 +38,7 @@
     "espressif32"
   ],
   "examples": [
-    {
-      "name": "ARMBOT Basic Example",
-      "base": "examples/ARMBOT_basic_example/ARMBOT_basic_example.ino"
-    }
+    "examples/ARMBOT_basic_example"
   ],
   "homepage": "https://github.com/CODROB-Education-Technologies/CODROB-ArmBot_lib",
   "dependencies": {

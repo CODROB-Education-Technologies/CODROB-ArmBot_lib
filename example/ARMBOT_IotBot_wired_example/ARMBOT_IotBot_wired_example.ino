@@ -14,8 +14,7 @@
 // Buzzer butonuna basıldığında 250ms boyunca ses çıkartır.
 
 // Tüm eksenlerin açı değerlerini ekranda gösterir.
-
-#include <ESP32Servo.h>
+#include <ARMBOT.h>
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h>
 
