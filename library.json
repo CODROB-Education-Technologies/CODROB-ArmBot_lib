@@ -13,13 +13,13 @@
   "authors": [
     {
       "name": "Samed Kaya",
-      "email": "samed5497@outlook.com",
-      "url": "https://codrob.com"
+      "email": "info@codrob.com.tr",
+      "url": "https://codrob.com.tr"
     }
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/samed5497/CODROB-ArmBot_lib.git"
+    "url": "https://github.com/CODROB-Education-Technologies/CODROB-ArmBot_lib"
   },
   "export": {
     "include": [
@@ -40,10 +40,10 @@
   "examples": [
     {
       "name": "ARMBOT Basic Example",
-      "base": "examples/ARMBOT_basic_example"
+      "base": "examples/ARMBOT_basic_example/ARMBOT_basic_example.ino"
     }
   ],
-  "homepage": "https://github.com/samed5497/CODROB-ArmBot_lib",
+  "homepage": "https://github.com/CODROB-Education-Technologies/CODROB-ArmBot_lib",
   "dependencies": {
     "ServoESP32": ">=1.0.0"
   }
