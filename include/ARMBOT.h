@@ -5,10 +5,10 @@
 
 // Servo kütüphanelerini dahil edin
 // Include the Servo libraries
-#if defined(ESP8266)
-#include <Servo.h>
-#elif defined(ESP32)
+#if defined(ESP32)
 #include <ServoESP32.h>
+#elif defined(ESP8266)
+#include <Servo.h>
 #endif
 
 // Platforma göre pin atamaları
