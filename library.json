@@ -1,7 +1,7 @@
 {
-  "name": "CODROB_ArmBot",
-  "version": "1.0.0",
-  "description": "ARMBOT Library for controlling robotic arm movements.",
+  "name": "CODROB_ARMBOT",
+  "version": "1.0.5",
+  "description": "CODROB - ARMBOT Library for controlling robotic arm movements. www.codrob.com.tr",
   "keywords": [
     "robotics",
     "arm",
@@ -42,6 +42,6 @@
   ],
   "homepage": "https://github.com/CODROB-Education-Technologies/CODROB-ArmBot_lib",
   "dependencies": {
-    "ServoESP32": ">=1.0.0"
+    "ServoESP32": ">=1.1.1"
   }
 }

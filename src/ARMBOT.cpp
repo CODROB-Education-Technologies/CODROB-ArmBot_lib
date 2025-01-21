@@ -1,33 +1,25 @@
 #include "include/ARMBOT.h"
 
 // ARMBOT sınıfının kurucu fonksiyonu
-// Constructor function of ARMBOT class
 ARMBOT::ARMBOT()
 {
-  // Kurucu fonksiyonun işlemleri buraya yazılır, eğer gerekliyse.
-  // Initialization tasks, if needed, are written here.
+  // Gerekirse kurucu işlemleri buraya yazılır.
 }
 
 void ARMBOT::begin()
 {
-  // Pin atamalarını burada yapıyoruz
-  // Assigning pins for the robot
   _buzzerPin = buzzer_pin;
   _axis1Pin = axis1_pin;
   _axis2Pin = axis2_pin;
   _axis3Pin = axis3_pin;
   _glipperPin = glipper_pin;
 
-  // Pin modlarını ayarla
-  // Setting pin modes
   pinMode(_buzzerPin, OUTPUT);
   pinMode(_axis1Pin, OUTPUT);
   pinMode(_axis2Pin, OUTPUT);
   pinMode(_axis3Pin, OUTPUT);
   pinMode(_glipperPin, OUTPUT);
 
-  // Servo motorları pinlere ata
-  // Attach servo motors to pins
 #ifdef ESP32
   _servoaxis1.attach(_axis1Pin);
   _servoaxis2.attach(_axis2Pin);
@@ -43,68 +35,55 @@ void ARMBOT::begin()
 
 void ARMBOT::test()
 {
-  // Kütüphanenin doğru çalıştığını test etmek için basit bir test kodu
-  // Simple test function to verify the library is working correctly
 #ifdef ESP32
-  tone(_buzzerPin, 1000, 500); // ESP32 için buzzer ses çalma
-  // Play a tone with the buzzer for ESP32
+  tone(_buzzerPin, 1000, 500);
 #else
-  digitalWrite(_buzzerPin, HIGH); // ESP8266 için buzzer aç
+  digitalWrite(_buzzerPin, HIGH);
   delay(500);
-  digitalWrite(_buzzerPin, LOW); // ESP8266 için buzzer kapat
+  digitalWrite(_buzzerPin, LOW);
 #endif
 }
 
 void ARMBOT::axis1Motion(int angle, int acceleration)
 {
-  // Dönme hareketini sağlayan fonksiyon
-  // Function to control rotation movement
 #ifdef ESP32
-  _servoaxis1.write(angle); // ESP32 servo hareketi
+  _servoaxis1.write(angle);
 #elif ESP8266
-  _servoaxis1.write(angle); // ESP8266 servo hareketi
+  _servoaxis1.write(angle);
 #endif
 }
 
 void ARMBOT::axis2Motion(int angle, int acceleration)
 {
-  // Omuzun hareketini sağlayan fonksiyon
-  // Function to control shoulder movement
 #ifdef ESP32
-  _servoaxis2.write(angle); // ESP32 servo hareketi
+  _servoaxis2.write(angle);
 #elif ESP8266
-  _servoaxis2.write(angle); // ESP8266 servo hareketi
+  _servoaxis2.write(angle);
 #endif
 }
 
 void ARMBOT::axis3Motion(int angle, int acceleration)
 {
-  // Dirseğin hareketini sağlayan fonksiyon
-  // Function to control elbow movement
 #ifdef ESP32
-  _servoaxis3.write(angle); // ESP32 servo hareketi
+  _servoaxis3.write(angle);
 #elif ESP8266
-  _servoaxis3.write(angle); // ESP8266 servo hareketi
+  _servoaxis3.write(angle);
 #endif
 }
 
 void ARMBOT::glipperMotion(int angle, int acceleration)
 {
-  // Kaydırma hareketini sağlayan fonksiyon
-  // Function to control gripper movement
 #ifdef ESP32
-  _servoglipper.write(angle); // ESP32 servo hareketi
+  _servoglipper.write(angle);
 #elif ESP8266
-  _servoglipper.write(angle); // ESP8266 servo hareketi
+  _servoglipper.write(angle);
 #endif
 }
 
 void ARMBOT::calBuzzer(int tune, int sure)
 {
-  // Buzzer üzerinde belirli bir nota çalmak için fonksiyon
-  // Function to play a tone on the buzzer
 #ifdef ESP32
-  tone(_buzzerPin, tune, sure); // ESP32 için tone fonksiyonu
+  tone(_buzzerPin, tune, sure);
 #else
   tone(_buzzerPin, tune);
   delay(sure);
