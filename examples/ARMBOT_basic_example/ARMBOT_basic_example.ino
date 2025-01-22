@@ -5,14 +5,14 @@ void setup()
 {
   armbot.begin(); // ARMBOT'u başlat
                   // Buzzer çalma örneği
-  armbot.buzzerPlay(500, 300);
+  armbot.buzzerPlay(200, 300);
   delay(1000);
 }
 
 void loop()
 {
   // Axis 1 hareketleri
-  armbot.buzzerPlay(1000, 50);
+  armbot.buzzerPlay(100, 200);
   delay(100);
 
   armbot.axis1Motion(0, 20); // Axis 1 sıfır açısına hareket
@@ -23,9 +23,10 @@ void loop()
   delay(1000);
 
   // Axis 2 hareketleri
-  armbot.buzzerPlay(1000, 50);
+  armbot.buzzerPlay(100, 50);
   delay(100);
-  armbot.buzzerPlay(1000, 50);
+  armbot.buzzerPlay(200, 200);
+
   delay(100);
 
   armbot.axis2Motion(0, 20);
@@ -36,11 +37,11 @@ void loop()
   delay(1000);
 
   // Axis 3 hareketleri
-  armbot.buzzerPlay(1000, 50);
+  armbot.buzzerPlay(100, 50);
   delay(100);
-  armbot.buzzerPlay(1000, 50);
+  armbot.buzzerPlay(150, 50);
   delay(100);
-  armbot.buzzerPlay(1000, 50);
+  armbot.buzzerPlay(200, 200);
   delay(100);
 
   armbot.axis3Motion(20, 20);
@@ -51,13 +52,13 @@ void loop()
   delay(1000);
 
   // Gripper hareketleri
-  armbot.buzzerPlay(1000, 50);
+  armbot.buzzerPlay(100, 50);
   delay(100);
-  armbot.buzzerPlay(1000, 50);
+  armbot.buzzerPlay(150, 50);
   delay(100);
-  armbot.buzzerPlay(1000, 50);
+  armbot.buzzerPlay(200, 50);
   delay(100);
-  armbot.buzzerPlay(1000, 50);
+  armbot.buzzerPlay(225, 200);
   delay(100);
 
   armbot.gripperMotion(0, 20);

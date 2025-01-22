@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.1.0] - 2025-01-22
+### Added
+- Tüm eksenler stabil hale getirildi ve buzzer tonu değiştirildi.
+
 ## [1.0.5] - 2025-01-18
 ### Added
 - İstiklal Marşı çalma özelliği eklendi.

@@ -81,9 +81,9 @@ void ARMBOT::gripperMotion(int angle, int speed)
 // Buzzer fonksiyonu
 void ARMBOT::buzzerPlay(int frequency, int duration)
 {
-  tone(_buzzerPin, frequency, duration);
+  analogWrite(_buzzerPin, frequency);
   delay(duration); // Gecikme
-  noTone(_buzzerPin);
+  analogWrite(_buzzerPin, 0);
 }
 
 void ARMBOT::istiklalMarsiCal()
