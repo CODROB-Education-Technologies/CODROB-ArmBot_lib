@@ -45,7 +45,11 @@
     "examples/ARMBOT_basic_example"
   ],
   "homepage": "https://github.com/CODROB-Education-Technologies/CODROB-ArmBot_lib",
-  "dependencies": {
-    "ESP32Servo": ">=3.0.6"
-  }
+  "dependencies": [
+    {
+      "name": "ESP32Servo",
+      "platforms": "espressif32",
+      "version": ">=3.0.6"
+    }
+  ]
 }
