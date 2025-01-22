@@ -1,49 +1,58 @@
-#ifndef ARMBOT_h
-#define ARMBOT_h
+#ifndef ARMBOT_H
+#define ARMBOT_H
 
-#include "Arduino.h"
-#include <ESP32Servo.h> // ESP32Servo kütüphanesi dahil edildi
+#include <Arduino.h>
 
-// Platforma göre pin atamaları
-#ifdef ESP8266
-const int buzzer_pin = 14;
-const int axis1_pin = 5;
-const int axis2_pin = 4;
-const int axis3_pin = 12;
-const int glipper_pin = 13;
-#elif ESP32
-const int buzzer_pin = 33;
-const int axis1_pin = 25;
-const int axis2_pin = 26;
-const int axis3_pin = 27;
-const int glipper_pin = 32;
+// Platforma göre gerekli kütüphaneyi seç
+#if defined(ESP32)
+#include <ESP32Servo.h>
+#elif defined(ESP8266)
+#include <Servo.h>
 #endif
 
 class ARMBOT
 {
 public:
-  ARMBOT();                               // Constructor
-  void begin();                           // Pin ve servo başlatma fonksiyonu
-  void test();                            // Buzzer testi
-  void axis1Motion(int angle);            // Axis 1 hareketi
-  void axis2Motion(int angle);            // Axis 2 hareketi
-  void axis3Motion(int angle);            // Axis 3 hareketi
-  void glipperMotion(int angle);          // Glipper hareketi
-  void calBuzzer(int tune, int duration); // Buzzer çalma
-  void istiklalMarsiCal();                // İstiklal Marşı çalma
+  void begin();
+  void axis1Motion(int angle, int speed);
+  void axis2Motion(int angle, int speed);
+  void axis3Motion(int angle, int speed);
+  void gripperMotion(int angle, int speed);
+  void buzzerPlay(int frequency, int duration);
+  void istiklalMarsiCal();
 
 private:
-  int _buzzerPin;
-  int _axis1Pin;
-  int _axis2Pin;
-  int _axis3Pin;
-  int _glipperPin;
+  void moveToAngle(int &lastPos, int angle, int speed);
 
   // Servo nesneleri
-  Servo _servoaxis1;
-  Servo _servoaxis2;
-  Servo _servoaxis3;
-  Servo _servoglipper;
+#if defined(ESP32) || defined(ESP8266)
+  Servo _axis1Servo;
+  Servo _axis2Servo;
+  Servo _axis3Servo;
+  Servo _gripperServo;
+#endif
+
+  // Son pozisyon değişkenleri
+  int _axis1LastPos = 90;
+  int _axis2LastPos = 90;
+  int _axis3LastPos = 50;
+  int _gripperLastPos = 60;
+
+  // Platforma göre pin tanımlamaları
+#if defined(ESP32)
+  const int _axis1Pin = 25;
+  const int _axis2Pin = 26;
+  const int _axis3Pin = 27;
+  const int _gripperPin = 32;
+  const int _buzzerPin = 33;
+
+#elif defined(ESP8266)
+  const int _axis1Pin = 5;
+  const int _axis2Pin = 4;
+  const int _axis3Pin = 12;
+  const int _gripperPin = 13;
+  const int _buzzerPin = 14;
+#endif
 };
 
 #endif

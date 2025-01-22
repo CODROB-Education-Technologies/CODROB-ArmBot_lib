@@ -1,53 +1,69 @@
-#include <ARMBOT.h> // ARMBOT kütüphanesini projeye dahil ediyoruz
-                    // Including the ARMBOT library into the project
-
-ARMBOT armbot; // ARMBOT sınıfından bir nesne oluşturuyoruz
-               // Creating an object of the ARMBOT class
+#include <ARMBOT.h>
+ARMBOT armbot;
 
 void setup()
 {
-  Serial.begin(115200);                 // Seri haberleşmeyi başlatıyoruz
-                                        // Initializing serial communication
-  armbot.begin();                       // ARMBOT nesnesinin başlatma fonksiyonunu çağırıyoruz
-                                        // Calling the initialization function of the ARMBOT object
-  Serial.println("ARMBOT Başlatıldı!"); // Durum bilgisi yazdırıyoruz
-                                        // Printing status information
+  armbot.begin(); // ARMBOT'u başlat
+                  // Buzzer çalma örneği
+  armbot.buzzerPlay(500, 300);
+  delay(1000);
 }
 
 void loop()
 {
-  // Buzzer bir nota çalar
-  // Buzzer plays a note
-  armbot.calBuzzer(440, 500); // Frekansı 440Hz, süresi 500ms
-                              // Frequency of 440Hz, duration of 500ms
-  delay(1000);                // 1 saniye bekle
-                              // Wait for 1 second
+  // Axis 1 hareketleri
+  armbot.buzzerPlay(1000, 50);
+  delay(100);
 
-  // Eksen 1 döner
-  // Axis 1 rotates
-  armbot.axis1Motion(90); // Dönme hareketi 90 derece
-                          // Rotate to 90 degrees
-  delay(1000);            // 1 saniye bekle
-                          // Wait for 1 second
+  armbot.axis1Motion(0, 20); // Axis 1 sıfır açısına hareket
+  delay(1000);
+  armbot.axis1Motion(180, 20); // Axis 1 maksimum açıya hareket
+  delay(1000);
+  armbot.axis1Motion(90, 20); // Axis 1 orta noktaya hareket
+  delay(1000);
 
-  // Eksen 2 hareket eder
-  // Axis 2 moves
-  armbot.axis2Motion(45); // Omuz hareketi 45 derece
-                          // Move the shoulder to 45 degrees
-  delay(1000);            // 1 saniye bekle
-                          // Wait for 1 second
+  // Axis 2 hareketleri
+  armbot.buzzerPlay(1000, 50);
+  delay(100);
+  armbot.buzzerPlay(1000, 50);
+  delay(100);
 
-  // Eksen 3 hareket eder
-  // Axis 3 moves
-  armbot.axis3Motion(30); // Dirsek hareketi 30 derece
-                          // Move the elbow to 30 degrees
-  delay(1000);            // 1 saniye bekle
-                          // Wait for 1 second
+  armbot.axis2Motion(0, 20);
+  delay(1000);
+  armbot.axis2Motion(180, 20);
+  delay(1000);
+  armbot.axis2Motion(90, 20);
+  delay(1000);
 
-  // Glipper kapanır
-  // Glipper closes
-  armbot.glipperMotion(10); // Kaydırma hareketi 10 derece
-                            // Slide to 10 degrees
-  delay(1000);              // 1 saniye bekle
-                            // Wait for 1 second
+  // Axis 3 hareketleri
+  armbot.buzzerPlay(1000, 50);
+  delay(100);
+  armbot.buzzerPlay(1000, 50);
+  delay(100);
+  armbot.buzzerPlay(1000, 50);
+  delay(100);
+
+  armbot.axis3Motion(20, 20);
+  delay(1000);
+  armbot.axis3Motion(180, 20);
+  delay(1000);
+  armbot.axis3Motion(50, 20);
+  delay(1000);
+
+  // Gripper hareketleri
+  armbot.buzzerPlay(1000, 50);
+  delay(100);
+  armbot.buzzerPlay(1000, 50);
+  delay(100);
+  armbot.buzzerPlay(1000, 50);
+  delay(100);
+  armbot.buzzerPlay(1000, 50);
+  delay(100);
+
+  armbot.gripperMotion(0, 20);
+  delay(1000);
+  armbot.gripperMotion(110, 20);
+  delay(1000);
+  armbot.gripperMotion(60, 20);
+  delay(1000);
 }
