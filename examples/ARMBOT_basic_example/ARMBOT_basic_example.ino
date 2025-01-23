@@ -3,68 +3,68 @@ ARMBOT armbot;
 
 void setup()
 {
-  armbot.begin(); // ARMBOT'u başlat
-                  // Buzzer çalma örneği
-  armbot.buzzerPlay(200, 300);
+  armbot.begin(); // Initialize the ARMBOT library (ARMbot kütüphanesini başlatır)
+
+  // Example of playing a buzzer tone (Buzzer çalma örneği)
+  armbot.buzzerPlay(200, 300); // Play a tone at 200 Hz for 300 ms (200 Hz frekansta 300 ms süreyle çalar)
   delay(1000);
 }
 
 void loop()
 {
-  // Axis 1 hareketleri
-  armbot.buzzerPlay(100, 200);
+  // Axis 1 movements (Eksen 1 hareketleri)
+  armbot.buzzerPlay(100, 200); // Play a tone before moving (Hareketten önce bir ses çalar)
   delay(100);
 
-  armbot.axis1Motion(0, 20); // Axis 1 sıfır açısına hareket
+  armbot.axis1Motion(0, 20); // Move Axis 1 to 0 degrees at speed 20 (Eksen 1'i sıfır açısına 20 hızda hareket ettirir)
   delay(1000);
-  armbot.axis1Motion(180, 20); // Axis 1 maksimum açıya hareket
+  armbot.axis1Motion(180, 20); // Move Axis 1 to 180 degrees at speed 20 (Eksen 1'i 180 açısına 20 hızda hareket ettirir)
   delay(1000);
-  armbot.axis1Motion(90, 20); // Axis 1 orta noktaya hareket
-  delay(1000);
-
-  // Axis 2 hareketleri
-  armbot.buzzerPlay(100, 50);
-  delay(100);
-  armbot.buzzerPlay(200, 200);
-
-  delay(100);
-
-  armbot.axis2Motion(0, 20);
-  delay(1000);
-  armbot.axis2Motion(180, 20);
-  delay(1000);
-  armbot.axis2Motion(90, 20);
+  armbot.axis1Motion(90, 20); // Move Axis 1 to 90 degrees at speed 20 (Eksen 1'i 90 açısına 20 hızda hareket ettirir)
   delay(1000);
 
-  // Axis 3 hareketleri
-  armbot.buzzerPlay(100, 50);
+  // Axis 2 movements (Eksen 2 hareketleri)
+  armbot.buzzerPlay(100, 50); // Play a tone before moving (Hareketten önce bir ses çalar)
   delay(100);
-  armbot.buzzerPlay(150, 50);
-  delay(100);
-  armbot.buzzerPlay(200, 200);
+  armbot.buzzerPlay(200, 200); // Play a tone before moving (Hareketten önce bir ses çalar)
   delay(100);
 
-  armbot.axis3Motion(20, 20);
+  armbot.axis2Motion(0, 20); // Move Axis 2 to 0 degrees at speed 20 (Eksen 2'yi sıfır açısına 20 hızda hareket ettirir)
   delay(1000);
-  armbot.axis3Motion(180, 20);
+  armbot.axis2Motion(180, 20); // Move Axis 2 to 180 degrees at speed 20 (Eksen 2'yi 180 açısına 20 hızda hareket ettirir)
   delay(1000);
-  armbot.axis3Motion(50, 20);
+  armbot.axis2Motion(90, 20); // Move Axis 2 to 90 degrees at speed 20 (Eksen 2'yi 90 açısına 20 hızda hareket ettirir)
   delay(1000);
 
-  // Gripper hareketleri
-  armbot.buzzerPlay(100, 50);
+  // Axis 3 movements (Eksen 3 hareketleri)
+  armbot.buzzerPlay(100, 50); // Play a tone before moving (Hareketten önce bir ses çalar)
   delay(100);
-  armbot.buzzerPlay(150, 50);
+  armbot.buzzerPlay(150, 50); // Play a tone before moving (Hareketten önce bir ses çalar)
   delay(100);
-  armbot.buzzerPlay(200, 50);
-  delay(100);
-  armbot.buzzerPlay(225, 200);
+  armbot.buzzerPlay(200, 200); // Play a tone before moving (Hareketten önce bir ses çalar)
   delay(100);
 
-  armbot.gripperMotion(0, 20);
+  armbot.axis3Motion(20, 20); // Move Axis 3 to 20 degrees at speed 20 (Eksen 3'ü 20 açısına 20 hızda hareket ettirir)
   delay(1000);
-  armbot.gripperMotion(110, 20);
+  armbot.axis3Motion(180, 20); // Move Axis 3 to 180 degrees at speed 20 (Eksen 3'ü 180 açısına 20 hızda hareket ettirir)
   delay(1000);
-  armbot.gripperMotion(60, 20);
+  armbot.axis3Motion(50, 20); // Move Axis 3 to 50 degrees at speed 20 (Eksen 3'ü 50 açısına 20 hızda hareket ettirir)
+  delay(1000);
+
+  // Gripper movements (Gripper hareketleri)
+  armbot.buzzerPlay(100, 50); // Play a tone before moving (Hareketten önce bir ses çalar)
+  delay(100);
+  armbot.buzzerPlay(150, 50); // Play a tone before moving (Hareketten önce bir ses çalar)
+  delay(100);
+  armbot.buzzerPlay(200, 50); // Play a tone before moving (Hareketten önce bir ses çalar)
+  delay(100);
+  armbot.buzzerPlay(225, 200); // Play a tone before moving (Hareketten önce bir ses çalar)
+  delay(100);
+
+  armbot.gripperMotion(0, 20); // Open gripper to 0 degrees at speed 20 (Gripper'ı 0 açısına 20 hızda açar)
+  delay(1000);
+  armbot.gripperMotion(110, 20); // Close gripper to 110 degrees at speed 20 (Gripper'ı 110 açısına 20 hızda kapatır)
+  delay(1000);
+  armbot.gripperMotion(60, 20); // Move gripper to 60 degrees at speed 20 (Gripper'ı 60 açısına 20 hızda hareket ettirir)
   delay(1000);
 }

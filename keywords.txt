@@ -3,14 +3,13 @@
 #######################################
 
 # Class name
-ARMBOT                KEYWORD1
+ARMBOT                  KEYWORD1
 
 # Methods
-begin                 KEYWORD2
-test                  KEYWORD2
-axis1Motion           KEYWORD2
-axis2Motion           KEYWORD2
-axis3Motion           KEYWORD2
-glipperMotion         KEYWORD2
-calBuzzer             KEYWORD2
-istiklalMarsiCal      KEYWORD2
+begin	                KEYWORD2
+axis1Motion	            KEYWORD2
+axis2Motion	            KEYWORD2
+axis3Motion	            KEYWORD2
+gripperMotion	        KEYWORD2
+buzzerPlay	            KEYWORD2
+istiklalMarsiCal	    KEYWORD2
