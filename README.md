@@ -45,4 +45,4 @@ Bu kütüphane 2024 Yılında Samed KAYA tarafından lisanslanmıştır. Detayla
 ![alt text](<images/1 (2).jpg>)
 ![alt text](<images/1 (4).jpg>)
 ![alt text](<images/1 (8).jpg>)
-![alt text](<images/VEKTÖR.png>)
+![alt text](<images/vector.jpg>)
