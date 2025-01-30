@@ -3,17 +3,35 @@
 // Initialize ARMBOT / ARMBOT'u başlat
 void ARMBOT::begin()
 {
-  // Attach servos and check for success / Servo motorları bağla ve başarılı olup olmadığını kontrol et
-  if (!_axis1Servo.attach(_axis1Pin))
-    Serial.println("Axis 1 Servo attach failed!");
-  if (!_axis2Servo.attach(_axis2Pin))
-    Serial.println("Axis 2 Servo attach failed!");
-  if (!_axis3Servo.attach(_axis3Pin))
-    Serial.println("Axis 3 Servo attach failed!");
-  if (!_gripperServo.attach(_gripperPin))
-    Serial.println("Gripper Servo attach failed!");
+#if defined(ESP32)
+  Serial.println("Initializing ARMBOT on ESP32...");
+#elif defined(ESP8266)
+  Serial.println("Initializing ARMBOT on ESP8266...");
+  analogWriteFreq(50); // **ESP8266 için PWM frekansını 50 Hz olarak ayarla**
+#else
+  Serial.println("Initializing ARMBOT on an unknown platform...");
+#endif
 
-  // Set servos to their initial positions / Servo motorlarını başlangıç pozisyonlarına ayarla
+  // Servo bağlama fonksiyonu / Function to attach servos
+  auto attachServo = [](Servo &servo, int pin, const char *name)
+  {
+#if defined(ESP32)
+    if (!servo.attach(pin, 1000, 2000)) // **ESP32 için 1000-2000 µs kullan**
+#elif defined(ESP8266)
+    if (!servo.attach(pin, 500, 2500)) // **ESP8266 için PWM sinyal genişliği arttırıldı (500-2500 µs)**
+#else
+    if (!servo.attach(pin)) // **ESP32 için 1000-2000 µs kullan**
+#endif
+      Serial.println(String(name) + " Servo attach failed!");
+  };
+
+  // **Servo motorları bağla / Attach servos**
+  attachServo(_axis1Servo, _axis1Pin, "Axis 1");
+  attachServo(_axis2Servo, _axis2Pin, "Axis 2");
+  attachServo(_axis3Servo, _axis3Pin, "Axis 3");
+  attachServo(_gripperServo, _gripperPin, "Gripper");
+
+  // **Servo motorlarını başlangıç pozisyonlarına ayarla / Set initial positions**
   _axis1Servo.write(_axis1LastPos);
   _axis2Servo.write(_axis2LastPos);
   _axis3Servo.write(_axis3LastPos);

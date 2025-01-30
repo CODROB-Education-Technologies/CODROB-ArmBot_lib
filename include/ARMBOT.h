@@ -8,6 +8,8 @@
 #include <ESP32Servo.h>
 #elif defined(ESP8266)
 #include <Servo.h>
+#else
+#include <Servo.h>
 #endif
 
 class ARMBOT
@@ -47,6 +49,18 @@ private:
   const int _axis3Pin = 12;
   const int _gripperPin = 13;
   const int _buzzerPin = 14;
+#else
+#define AXIS1_CUSTOM_PIN
+#define AXIS2_CUSTOM_PIN
+#define AXIS3_CUSTOM_PIN
+#define AXIS4_CUSTOM_PIN
+#define BUZZER_CUSTOM_PIN
+
+  const int _axis1Pin = AXIS1_CUSTOM_PIN;
+  const int _axis2Pin = AXIS2_CUSTOM_PIN;
+  const int _axis3Pin = AXIS3_CUSTOM_PIN;
+  const int _gripperPin = AXIS4_CUSTOM_PIN;
+  const int _buzzerPin = BUZZER_CUSTOM_PIN;
 #endif
 };
 
