@@ -26,6 +26,7 @@ private:
 
   // Servo objects for the axes and gripper / Servo motor nesneleri
   Servo _axis1Servo, _axis2Servo, _axis3Servo, _gripperServo;
+  int currentAngle = 0;
 
   // Last position variables for each axis / Her eksen için son pozisyon değişkenleri
   int _axis1LastPos = 90;

@@ -1,6 +1,6 @@
 {
   "name": "CODROB_ARMBOT",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "CODROB - ARMBOT Library for controlling robotic arm movements. Visit www.codrob.com.tr for more information. / CODROB - ARMBOT Kütüphanesi, robotik kol hareketlerini kontrol etmek için geliştirilmiştir. Daha fazla bilgi için www.codrob.com.tr adresini ziyaret edin.",
   "keywords": [
     "robotics",

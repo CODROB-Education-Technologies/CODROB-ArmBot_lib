@@ -21,33 +21,44 @@ void ARMBOT::begin()
 }
 
 // Smooth movement to target angle / Hedef açıya yumuşak hareket
-void ARMBOT::moveToAngle(int &lastPos, int angle, int speed)
+void ARMBOT::moveToAngle(int &currentAngle, int angle, int speed)
 {
-  int step = (angle > lastPos) ? 1 : -1; // Determine direction / Hareket yönü belirle
-  while (lastPos != angle)
+  // Eğer açı sınırların dışındaysa, sınırlar içinde tut
+  angle = constrain(angle, 0, 180);
+
+  // İlk hareketi mevcut açıdan başlat (ilk başta 0'a gitmesini önlemek için)
+  if (currentAngle == -1)
   {
-    lastPos += step;
-    if (&lastPos == &_axis1LastPos)
-      _axis1Servo.write(lastPos);
-    if (&lastPos == &_axis2LastPos)
-      _axis2Servo.write(lastPos);
-    if (&lastPos == &_axis3LastPos)
-      _axis3Servo.write(lastPos);
-    if (&lastPos == &_gripperLastPos)
-      _gripperServo.write(lastPos);
+    currentAngle = angle;
+  }
 
-    delay(speed);
+  int step = (angle > currentAngle) ? 1 : -1; // Hareket yönünü belirle
 
-    // Exit if target reached / Hedefe ulaşılırsa çık
-    if ((step > 0 && lastPos >= angle) || (step < 0 && lastPos <= angle))
+  while (currentAngle != angle)
+  {
+    currentAngle += step;
+
+    if (&currentAngle == &_axis1LastPos)
+      _axis1Servo.write(currentAngle);
+    if (&currentAngle == &_axis2LastPos)
+      _axis2Servo.write(currentAngle);
+    if (&currentAngle == &_axis3LastPos)
+      _axis3Servo.write(currentAngle);
+    if (&currentAngle == &_gripperLastPos)
+      _gripperServo.write(currentAngle);
+
+    delay(speed); // Hareket hızını kontrol et
+
+    // Hedef açıya ulaşıldıysa çık
+    if ((step > 0 && currentAngle >= angle) || (step < 0 && currentAngle <= angle))
     {
-      lastPos = angle;
+      currentAngle = angle;
       break;
     }
   }
 }
 
-// Axis control functions / Eksen kontrol fonksiyonları
+// **Eksen kontrol fonksiyonları / Axis control functions**
 void ARMBOT::axis1Motion(int angle, int speed) { moveToAngle(_axis1LastPos, angle, speed); }
 void ARMBOT::axis2Motion(int angle, int speed) { moveToAngle(_axis2LastPos, angle, speed); }
 void ARMBOT::axis3Motion(int angle, int speed) { moveToAngle(_axis3LastPos, angle, speed); }
