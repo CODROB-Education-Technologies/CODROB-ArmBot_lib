@@ -16,7 +16,7 @@ void ARMBOT::begin()
   auto attachServo = [](Servo &servo, int pin, const char *name)
   {
 #if defined(ESP32)
-    if (!servo.attach(pin, 1000, 2000)) // **ESP32 için 1000-2000 µs kullan**
+    if (!servo.attach(pin, 500, 2500)) // **ESP32 için 1000-2000 µs kullan**
 #elif defined(ESP8266)
     if (!servo.attach(pin, 500, 2500)) // **ESP8266 için PWM sinyal genişliği arttırıldı (500-2500 µs)**
 #else
