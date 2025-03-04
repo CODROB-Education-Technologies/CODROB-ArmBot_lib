@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.2.5] - 2025-03-04
+### Added
+- Added Arduino IDE Suport
+
+
 ## [1.1.3] - 2025-01-23
 ### Fixed
 - Resolved servo initialization issues for Axis 1 and Axis 2.
